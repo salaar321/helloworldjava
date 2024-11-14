@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-k8s
-          image: salaar123/helloworldjava:v10
+          image: shyam.azurecr.io/helloworldjava:v4
 # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
