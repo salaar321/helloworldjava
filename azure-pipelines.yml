@@ -20,6 +20,7 @@ variables:
 
   # Agent VM image name
   vmImageName: 'shyam'
+  poolName: 'Shyam'
 
 
 stages:
@@ -29,6 +30,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: $(poolName)
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
