@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: salaarhelloworldjava 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: salaarhelloworldjava
+  template:
+    metadata:
+      labels:
+        app: salaarhelloworldjava 
+    spec:
+      containers:
+        - name: salaarhelloworldjava 
+          image: shyam.azurecr.io/salaarhelloworldjava
+          ports:
+          - containerPort: 80
