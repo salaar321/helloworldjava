@@ -1,27 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    stage("build") {
-      steps {
-          echo ' building the application...'
-      }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                bat '''
+                javac helloworld.java
+                java helloworld
+                '''
+            }
+        }
     }
-    stage(" test") {
-        when {
-      steps {
-          echo ' testing the application....'
-      }
-    stage(" deploy") {
-      steps {
-          echo ' deploying the application...'
-      }
-    }
-  }
-  post{
-      always{
-          //
-      }
-      failure {
-      }
-  }
 }
+
